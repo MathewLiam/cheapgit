@@ -1,17 +1,24 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<cheapgit.ViewModels.blocks.ProductCard>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProductCard>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @using Umbraco.Web.Models
+@using cheapgit.ViewModels.blocks
 @{
     var descbrief = Model.product.description.Substring(0, 50);
-    var productDetailsRoot = Model.Content.Value<IPublishedContent>("rootProductDetailsPage");
-    var linkRouteValue = new RouteValueDictionary(new { product = Model.product });
+    IPublishedContent productDetailsPage;
+    if (Model.Content.Parent.Value("rootProductDetailsPage") == null)
+    {
+        productDetailsPage = Model.Content.Root().Value<IPublishedContent>("rootProductDetailsPage");
+    } else
+    {
+        productDetailsPage = Model.Content.Value<IPublishedContent>("rootProductDetailsPage");
+    }
 }
 
 <div class="card" style="width:20rem">
     <img class="card-img-top" src="~/Media/blxgjmx0/download.png" alt="Card image">
     <div class="card-body">
         <h4 class="card-title">
-            <a href="@String.Format("{0}?id={1}", productDetailsRoot.Url, Model.product.id)">@Model.product.name</a>
+            <a href="@String.Format("{0}?id={1}", productDetailsPage.Url, Model.product.id)">@Model.product.name</a>
         </h4>
         <p>@(descbrief)...</p>
     </div>

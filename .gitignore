@@ -5,3 +5,5 @@ cheapgit/.vs/**
 **/bin/**
 **/*.user
 **/App_Data/Logs/**
+.vs/**
+
