@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ImageBlock>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web.Models
+<div class="image-block row">
+    <div class="col-lg-3">
+    @{
+        var image = Model.Value<IPublishedContent>("image");
+        if (image != null)
+        {
+            <img src="@image.Url"  />
+        }
+    }
+    </div>
+    <div class="col-lg-9">
+        @if (Model.Value<bool>("headerTextVisible"))
+        {
+        <h1 class="header">
+            @Model.Value("headerText")
+        </h1>
+        }
+
+        @if (Model.Value<bool>("subHeaderTextVisible"))
+        {
+        <h2 class="header">
+            @Model.Value("subheadingText")
+        </h2>
+        }
+        <p>@Model.Value("bodyText")</p>
+    </div>
+
+</div>

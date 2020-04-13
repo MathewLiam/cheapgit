@@ -1,0 +1,9 @@
+E:\cheapgit\cheapgit\cheapgit.DAL\obj\Debug\netstandard2.0\cheapgit.DAL.AssemblyInfoInputs.cache
+E:\cheapgit\cheapgit\cheapgit.DAL\obj\Debug\netstandard2.0\cheapgit.DAL.AssemblyInfo.cs
+E:\cheapgit\cheapgit\cheapgit.DAL\bin\Debug\netstandard2.0\cheapgit.DAL.deps.json
+E:\cheapgit\cheapgit\cheapgit.DAL\bin\Debug\netstandard2.0\cheapgit.DAL.dll
+E:\cheapgit\cheapgit\cheapgit.DAL\bin\Debug\netstandard2.0\cheapgit.DAL.pdb
+E:\cheapgit\cheapgit\cheapgit.DAL\obj\Debug\netstandard2.0\cheapgit.DAL.dll
+E:\cheapgit\cheapgit\cheapgit.DAL\obj\Debug\netstandard2.0\cheapgit.DAL.pdb
+E:\cheapgit\cheapgit\cheapgit.DAL\obj\Debug\netstandard2.0\cheapgit.DAL.csprojAssemblyReference.cache
+E:\cheapgit\cheapgit\cheapgit.DAL\obj\Debug\netstandard2.0\cheapgit.DAL.csproj.CoreCompileInputs.cache

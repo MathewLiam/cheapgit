@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProductList>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web.Models
+@using cheapgit.ViewModels.pages;
+@{
+    Layout = "~/Views/_Master.cshtml";
+}
+@if ((bool) Model.Content.GetProperty("headerVisible").GetValue())
+{
+    <h1 class="header">@Model.Content.GetProperty("header").GetValue()</h1>
+}
+
+<h2>@Model.products.Count() results found</h2>
+<div class="card-group">
+@if (Model.products != null)
+{
+    foreach (var product in Model.products)
+    {
+        Html.RenderPartial("~/Views/Shared/_ProductCard.cshtml", new cheapgit.ViewModels.blocks.ProductCard(Model.Content) { product = product });
+    }
+}
+ </div>

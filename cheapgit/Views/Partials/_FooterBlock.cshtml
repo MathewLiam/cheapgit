@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web.Models;
+
+@{ 
+    var home = Model.Root();
+    var FooterLinks = home.Value<IEnumerable<Link>>("footerLinks");
+}
+
+<footer>
+    <div class="row">
+        <p>PLACEHOLDER TEXT</p>
+    </div>
+</footer>

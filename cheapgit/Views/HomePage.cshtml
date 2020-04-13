@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web.Models
+@{
+    Layout = "~/Views/_Master.cshtml";
+}
+@if (Model.Value<bool>("contentAreaHeadingVisible"))
+{
+    <div class="page-heading">
+        <h1 class="header">@Model.Value("contentAreaHeading")</h1>
+    </div>
+}
+
+<div class="page-content">
+    @{ Html.RenderPartial("~/Views/Partials/_ContentBlocks.cshtml"); }
+</div>

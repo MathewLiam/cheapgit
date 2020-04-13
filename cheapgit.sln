@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cheapgit", "cheapgit\cheapgit.csproj", "{38451BC9-150C-4418-B211-FD73933E851B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cheapgit.API.Gateway", "cheapgit.API.Gateway\cheapgit.API.Gateway.csproj", "{CE6B5733-D849-47D8-9220-B3799AF03F5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cheapgit.test", "cheapgit.DAL.test\cheapgit.test.csproj", "{37672F31-0873-4643-90CC-839AD230B0A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cheapgit.DAL", "cheapgit.DAL\cheapgit.DAL.csproj", "{4BC16BE9-6DED-450E-83C0-E0B918C2F235}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DevTest|Any CPU = DevTest|Any CPU
+		PreProd|Any CPU = PreProd|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38451BC9-150C-4418-B211-FD73933E851B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38451BC9-150C-4418-B211-FD73933E851B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38451BC9-150C-4418-B211-FD73933E851B}.DevTest|Any CPU.ActiveCfg = DevTest|Any CPU
+		{38451BC9-150C-4418-B211-FD73933E851B}.DevTest|Any CPU.Build.0 = DevTest|Any CPU
+		{38451BC9-150C-4418-B211-FD73933E851B}.PreProd|Any CPU.ActiveCfg = Debug|Any CPU
+		{38451BC9-150C-4418-B211-FD73933E851B}.PreProd|Any CPU.Build.0 = Debug|Any CPU
+		{38451BC9-150C-4418-B211-FD73933E851B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38451BC9-150C-4418-B211-FD73933E851B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE6B5733-D849-47D8-9220-B3799AF03F5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE6B5733-D849-47D8-9220-B3799AF03F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE6B5733-D849-47D8-9220-B3799AF03F5C}.DevTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE6B5733-D849-47D8-9220-B3799AF03F5C}.DevTest|Any CPU.Build.0 = Debug|Any CPU
+		{CE6B5733-D849-47D8-9220-B3799AF03F5C}.PreProd|Any CPU.ActiveCfg = Release|Any CPU
+		{CE6B5733-D849-47D8-9220-B3799AF03F5C}.PreProd|Any CPU.Build.0 = Release|Any CPU
+		{CE6B5733-D849-47D8-9220-B3799AF03F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE6B5733-D849-47D8-9220-B3799AF03F5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37672F31-0873-4643-90CC-839AD230B0A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37672F31-0873-4643-90CC-839AD230B0A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37672F31-0873-4643-90CC-839AD230B0A5}.DevTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{37672F31-0873-4643-90CC-839AD230B0A5}.DevTest|Any CPU.Build.0 = Debug|Any CPU
+		{37672F31-0873-4643-90CC-839AD230B0A5}.PreProd|Any CPU.ActiveCfg = Release|Any CPU
+		{37672F31-0873-4643-90CC-839AD230B0A5}.PreProd|Any CPU.Build.0 = Release|Any CPU
+		{37672F31-0873-4643-90CC-839AD230B0A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37672F31-0873-4643-90CC-839AD230B0A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC16BE9-6DED-450E-83C0-E0B918C2F235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC16BE9-6DED-450E-83C0-E0B918C2F235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC16BE9-6DED-450E-83C0-E0B918C2F235}.DevTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC16BE9-6DED-450E-83C0-E0B918C2F235}.DevTest|Any CPU.Build.0 = Debug|Any CPU
+		{4BC16BE9-6DED-450E-83C0-E0B918C2F235}.PreProd|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC16BE9-6DED-450E-83C0-E0B918C2F235}.PreProd|Any CPU.Build.0 = Release|Any CPU
+		{4BC16BE9-6DED-450E-83C0-E0B918C2F235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC16BE9-6DED-450E-83C0-E0B918C2F235}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EA64C25-39F2-4555-B1D7-240386C63971}
+	EndGlobalSection
+EndGlobal

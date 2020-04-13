@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web.Models
+
+
+@{
+    var items = Model.Value<IEnumerable<IPublishedElement>>("contentBlocks");
+}
+
+@foreach(var item in items)
+{
+    if (item.GetType().ToString().Equals("Umbraco.Web.PublishedModels.ImageBlock"))
+    {
+        <div class="content-block">
+            @{
+                Html.RenderPartial("~/Views/Partials/_ImageBlock.cshtml", item);
+            }
+        </div>
+    }
+
+}

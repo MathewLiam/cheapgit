@@ -1,0 +1,115 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex.oracle.com",
+          "port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/products",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/{product}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex.oracle.com",
+          "port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{product}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/{product}/images",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex.oracle.com",
+          "port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{product}/images",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/{product}/images/{image}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex.oracle.com",
+          "port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{product}/images/{image}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/{product}/comments",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex.oracle.com",
+          "port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{product}/comments",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/{product}/comments/{comment}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex.oracle.com",
+          "port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{product}/comments/{comment}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/{product}/reviews",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex.oracle.com",
+          "port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{product}/reviews",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/{product}/reviews/{review}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex.oracle.com",
+          "port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/products/{product}/reviews/{review}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/categories/{category}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apex.oracle.com",
+          "port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/categories/{category}",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost/5000"
+  }
+}

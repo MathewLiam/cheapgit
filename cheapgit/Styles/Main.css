@@ -1,0 +1,73 @@
+﻿/* HEADER */
+.header-area {
+    border-radius: 0%;
+    margin-bottom: 0%;
+    padding: 1rem;
+    display: flex;
+    align-items:center;
+}
+
+.header-area i {
+    font-size: xx-large;
+}
+
+#header-image {
+    width: 100%;
+}
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    background-color: #0056FF;
+}
+/* nav links highlight on hover border bottom */
+.nav-link {
+    border-bottom: solid 0.2rem #007bff;
+    color: white;
+}
+.nav-link:hover, active {
+    border-bottom: solid 0.2rem lightgreen;
+}
+
+
+/* PRODUCT CARDS */
+.card {
+    margin: 0.7rem;
+}
+
+
+/*IMAGE BLOCKS*/
+.image-block {
+    background-color: #eee;
+    border-top: 0.6rem solid #007bff;
+}
+
+
+/* CONTENT BLOCKS */
+.content-block {
+    padding-top: 2%;
+}
+
+
+/* MAIN CONTENT AREA */
+.main {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-left: 9%;
+    margin-right: 9%;
+    font-size: 1.5rem;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #47525E;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    padding: 2rem;
+    color: white;
+}
+
+

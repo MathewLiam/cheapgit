@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web.Models;
+
+
+<nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+    <ul class="navbar-nav">
+        @{
+            var home = Model.Root();
+            var navlinks = home.ChildrenOfType("categoryPage");
+        }
+
+        @foreach (var item in navlinks)
+        {
+            <li class="nav-item">
+                <a href="@item.Url" class="nav-link">@item.Name</a>
+            </li>
+        }
+    </ul>
+</nav>
+

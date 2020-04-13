@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<cheapgit.ViewModels.pages.ProductDetails>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using cheapgit.ViewModels.pages
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_Master.cshtml";
+}
+<<<<<<< HEAD
+=======
+
+@{
+    if (Model.product == null)
+    {
+        <h1>Full all here</h1>
+    }
+    else
+    {
+        <h1>@Model.product.name</h1>
+        <h1>@Model.product.description</h1>
+        <h1>@Model.product.dateAdded</h1>
+    }
+}
+>>>>>>> TRY-MM-29 Product Details Page

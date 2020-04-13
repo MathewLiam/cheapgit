@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cheapgit</title>
+    <link href="~/Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="~/Styles/Main.css" rel="stylesheet" />
+</head>
+<body>
+    @{
+        Html.RenderPartial("~/Views/Partials/_HeaderBlock.cshtml");
+        Html.RenderPartial("~/Views/Partials/_NavigationBlock.cshtml");
+    }
+
+    <div class="row">
+        <div class="main">
+            @RenderBody()
+        </div>
+    </div>
+    @{
+        Html.RenderPartial("~/Views/Partials/_FooterBlock.cshtml");
+    }
+</body>
+</html>

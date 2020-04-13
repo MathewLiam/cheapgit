@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Products>
+@using ContentModels = Umbraco.Web.PublishedModels;
+
+@{ 
+    var image = Model.Value<IPublishedContent>("categoryPageDisplayImage");
+}
+
+<div class="card" style="width:20rem">
+    @if (image != null)
+    {
+        <img class="card-img-top" src="@image.Url" alt="Card image">
+    }
+    <div class="card-body">
+        <h2 class="card-title">
+            <a href="@Model.Url">@Model.Value("header")</a>
+        </h2>
+    </div>
+</div>
