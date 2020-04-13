@@ -1,0 +1,7 @@
+**/App_Data/TEMP/**
+**/obj/**
+*.sln
+cheapgit/.vs/**
+**/bin/**
+**/*.user
+**/App_Data/Logs/**
