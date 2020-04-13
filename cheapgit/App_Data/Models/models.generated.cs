@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d84f9c96207ff407")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9677cc67de55810c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -219,11 +219,11 @@ namespace Umbraco.Web.PublishedModels
 		public string CustomerSupportNumber => this.Value<string>("customerSupportNumber");
 
 		///<summary>
-		/// Root product detail page
+		/// Root product details page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("rootProductDetailPage")]
-		public IPublishedContent RootProductDetailPage => this.Value<IPublishedContent>("rootProductDetailPage");
+		[ImplementPropertyType("rootProductDetailsPage")]
+		public IPublishedContent RootProductDetailsPage => this.Value<IPublishedContent>("rootProductDetailsPage");
 
 		///<summary>
 		/// Search button text
@@ -388,13 +388,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("headerVisible")]
 		public bool HeaderVisible => this.Value<bool>("headerVisible");
-
-		///<summary>
-		/// Root product details page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("rootProductDetailsPage")]
-		public IPublishedContent RootProductDetailsPage => this.Value<IPublishedContent>("rootProductDetailsPage");
 	}
 
 	/// <summary>Jumbotron Block</summary>
@@ -522,6 +515,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("categoryTitle")]
 		public string CategoryTitle => this.Value<string>("categoryTitle");
+
+		///<summary>
+		/// Root product details page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("rootProductDetailsPage")]
+		public IPublishedContent RootProductDetailsPage => this.Value<IPublishedContent>("rootProductDetailsPage");
 	}
 
 	/// <summary>Folder</summary>

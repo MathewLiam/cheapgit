@@ -15,13 +15,15 @@ namespace cheapgit.Controllers
 {
     public class ProductDetailsController : Umbraco.Web.Mvc.RenderMvcController
     {
-        private IApiWorker _oracleApiWorker = new OracleApiWorker(ConfigurationSettings.AppSettings.Get("OcelotAPIGateway"));
+        IApiWorker _oracleApiWorker = new OracleApiWorker(ConfigurationSettings.AppSettings.Get("OcelotAPIGateway"));
         // GET: Products
         public async Task<ActionResult> Index(ContentModel content, string id)
         {
             var model = new ProductDetails(content.Content)
             {
-                product = await _oracleApiWorker.GetProductById(id)
+                product = await _oracleApiWorker.GetProductById(id),
+                comments = await _oracleApiWorker.GetProductComments(id),
+                reviews = await _oracleApiWorker.GetProductReviews(id)
             };
 
             return CurrentTemplate(model);

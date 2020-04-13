@@ -421,6 +421,11 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="Global.asax" />
+    <None Include="scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.4.1.js" />
+    <Content Include="scripts\jquery-3.4.1.min.js" />
+    <Content Include="scripts\jquery-3.4.1.slim.js" />
+    <Content Include="scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="scripts\umbraco-starterkit-app.js" />
     <Content Include="Styles\Bootstrap\bootstrap-grid.css" />
     <Content Include="Styles\Bootstrap\bootstrap-grid.min.css" />
@@ -480,8 +485,11 @@
     <Content Include="Views\Partials\_HeaderBlock.cshtml" />
     <Content Include="Views\ProductDetails.cshtml" />
     <Content Include="Views\CategoryPage.cshtml" />
-    <Content Include="Views\Partials\_CategoryBlock.cshtml" />
     <None Include="Properties\PublishProfiles\cheapgitpreprod - Web Deploy.pubxml" />
+    <Content Include="Views\Shared\_CategoryBlock.cshtml" />
+    <Content Include="Views\Partials\_ProductDetailsTabs.cshtml" />
+    <Content Include="scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.4.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

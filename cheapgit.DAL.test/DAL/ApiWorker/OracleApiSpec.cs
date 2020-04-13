@@ -9,7 +9,7 @@ namespace cheapgit.test.DAL.ApiWorker
 {
     public class OracleApiSpec
     {
-        OracleApiWorker apiworker = new OracleApiWorker();
+        OracleApiWorker apiworker = new OracleApiWorker("http://localhost:5000");
 
         [Test]
         public void CanFetchListOfProducts()
