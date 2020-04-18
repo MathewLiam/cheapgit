@@ -1,4 +1,4 @@
-﻿@model cheapgit.ViewModels.pages.ProductDetails
+﻿@model cheapgit.ViewModels.pages.ProductDetailsViewModel
 <script>
     $(document).ready(function () {
         $(".nav-tabs a").click(function () {
@@ -36,6 +36,8 @@
         </ul>
     </div>
     <div id="reviews" class="container tab-pane">
+        @{Html.RenderAction(actionName:"GetProductRating", controllerName:"ProductReview", routeValues:new { content = Model.Content, productReviews = Model.reviews });}
+
         @if (Model.reviews.ToList().Count == 0)
         {
             <p>Be the first to comment on this item!</p>

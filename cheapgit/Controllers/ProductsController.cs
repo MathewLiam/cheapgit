@@ -30,7 +30,7 @@ namespace cheapgit.Controllers
                 productslist.AddRange(categoryProducts);
             }
 
-            var model = new ProductList(content.Content)
+            var model = new ProductListViewModel(content.Content)
             {
                 products = productslist
             };

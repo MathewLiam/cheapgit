@@ -19,7 +19,7 @@ namespace cheapgit.Controllers
         // GET: Products
         public async Task<ActionResult> Index(ContentModel content, string id)
         {
-            var model = new ProductDetails(content.Content)
+            var model = new ProductDetailsViewModel(content.Content)
             {
                 product = await _oracleApiWorker.GetProductById(id),
                 reviews = await _oracleApiWorker.GetProductReviews(id)

@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProductList>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProductListViewModel>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @using Umbraco.Web.Models
 @using cheapgit.ViewModels.pages;
@@ -16,7 +16,7 @@
 {
     foreach (var product in Model.products)
     {
-        Html.RenderPartial("~/Views/Shared/_ProductCard.cshtml", new cheapgit.ViewModels.blocks.ProductCard(Model.Content) { product = product });
+        Html.RenderPartial("~/Views/Shared/_ProductCard.cshtml", new cheapgit.ViewModels.blocks.ProductCardViewModel(Model.Content) { product = product });
     }
 }
  </div>

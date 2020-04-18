@@ -12,9 +12,9 @@ using Umbraco.Web.Models;
 
 namespace cheapgit.ViewModels.pages
 {
-    public class ProductDetails : ContentModel
+    public class ProductDetailsViewModel : ContentModel
     {
-        public ProductDetails(IPublishedContent content) : base(content) { }
+        public ProductDetailsViewModel(IPublishedContent content) : base(content) { }
         public Product product { get; set; }
         public IEnumerable<ProductReview> reviews { get; set; }
     }

@@ -9,10 +9,10 @@ using Umbraco.Core.Models.PublishedContent;
 
 namespace cheapgit.ViewModels.blocks
 {
-    public class ProductCard : ContentModel
+    public class ProductCardViewModel : ContentModel
     {
         // Standard Model Pass Through
-        public ProductCard(IPublishedContent content) : base(content) { }
+        public ProductCardViewModel(IPublishedContent content) : base(content) { }
 
         public Product product { get; set; }
 

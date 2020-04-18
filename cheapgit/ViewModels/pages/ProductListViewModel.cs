@@ -8,10 +8,10 @@ using cheapgit.DAL.Models;
 
 namespace cheapgit.ViewModels.pages
 {
-    public class ProductList : ContentModel
+    public class ProductListViewModel : ContentModel
     {
         // Standard Model Pass Through
-        public ProductList(IPublishedContent content) : base(content) { }
+        public ProductListViewModel(IPublishedContent content) : base(content) { }
 
         public IEnumerable<Product> products { get; set; }
 
