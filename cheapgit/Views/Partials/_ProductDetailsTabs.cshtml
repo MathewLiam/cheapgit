@@ -1,25 +1,22 @@
 ﻿@model cheapgit.ViewModels.pages.ProductDetails
-    <script>
-        $(document).ready(function () {
-            $(".nav-tabs a").click(function () {
-                $(".nav-tabs li a").each(function(i) {
-                    if ($(this).hasClass("active")) {
-                        $(this).removeClass("active");
-                        $($(this).attr("href")).removeClass("active");
-                    }
-                });
-                $(this).addClass("active");
-                $($(this).attr("href")).addClass("active");
+<script>
+    $(document).ready(function () {
+        $(".nav-tabs a").click(function () {
+            $(".nav-tabs li a").each(function(i) {
+                if ($(this).hasClass("active")) {
+                    $(this).removeClass("active");
+                    $($(this).attr("href")).removeClass("active");
+                }
             });
+            $(this).addClass("active");
+            $($(this).attr("href")).addClass("active");
         });
-    </script>
+    });
+</script>
 
 <ul class="nav-tabs nav nav-justified">
     <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#comments"><i style="font-size: xx-large;" class="fas fa-comment-alt"></i><br><h3>Comments</h3></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#details"><i style="font-size: xx-large;" class="fas fa-bars"></i><br><h3>Details</h3></a>
+        <a class="nav-link active" data-toggle="tab" href="#details"><i style="font-size: xx-large;" class="fas fa-bars"></i><br><h3>Details</h3></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#reviews"><i style="font-size: xx-large;" class="fas fa-chart-pie"></i><br><h3>Reviews</h3></a>
@@ -27,31 +24,36 @@
 </ul>
 
 <div class="tab-content">
-    <div id="comments" class="tab-pane container active">
-        @if(Model.comments.ToList().Count == 0)
+    <div id="details" class="container tab-pane active">
+        <ul>
+        @{ 
+            var points = Model.product.featureBullets.Split('\n');
+            foreach (var point in points)
+            {
+                <li>@point</li>
+            }
+        }
+        </ul>
+    </div>
+    <div id="reviews" class="container tab-pane">
+        @if (Model.reviews.ToList().Count == 0)
         {
             <p>Be the first to comment on this item!</p>
         }
-        @foreach (var comment in Model.comments)
+        @foreach (var review in Model.reviews)
         {
-            if (comment.flaggedInappropriate != 1)
+            if (review.flaggedInappropriate != 1)
             {
                 <div class="media border p-3">
-            
+
                     <i class="fas fa-user" style="font-size: 2rem;"></i>
                     <div class="media-body">
-                        <h4>@comment.commentTitle <small><i>Posted at @comment.dateAdded</i></small></h4>
-                        <p>@comment.commentBody</p>
+                        <h4>@review.commentTitle <small><i>Posted at @review.dateAdded</i></small></h4>
+                        <p>@review.commentBody</p>
                     </div>
                 </div>
             }
         }
-    </div>
-    <div id="details" class="container tab-pane">
-        @Model.product.
-    </div>
-    <div id="reviews" class="container tab-pane">
-        <h1>Placeholder text where the reviews will be rendered</h1>
     </div>
 </div>
 

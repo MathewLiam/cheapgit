@@ -9,8 +9,9 @@ namespace cheapgit.DAL.Models.OracleServiceModels
         public string id { get; set; }
         public string productid { get; set; }
         public DateTime dateAdded { get; set; }
-        public float durability { get; set; }
-        public float product_value { get; set; }
-        public float overall { get; set; }
+        public float rating { get; set; }
+        public string commentTitle { get; set; }
+        public string commentBody { get; set; }
+        public int flaggedInappropriate { get; set; }
     }
 }

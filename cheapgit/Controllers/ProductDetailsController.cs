@@ -22,7 +22,6 @@ namespace cheapgit.Controllers
             var model = new ProductDetails(content.Content)
             {
                 product = await _oracleApiWorker.GetProductById(id),
-                comments = await _oracleApiWorker.GetProductComments(id),
                 reviews = await _oracleApiWorker.GetProductReviews(id)
             };
 

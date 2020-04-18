@@ -38,21 +38,6 @@ namespace cheapgit.test.DAL.ApiWorker
         }
 
         [Test]
-        public void CanFetchProductComments()
-        {
-            var response = apiworker.GetProductComments("PRODUCT1235");
-            
-            Assert.True(response.Result is IEnumerable<ProductComment>);
-        }
-
-        [Test]
-        public void CanFetchProductCommentById()
-        {
-            var response = apiworker.GetProductComment("PRODUCT1235", "COMMENT1");
-            Assert.True(response is Task<ProductComment>);
-        }
-
-        [Test]
         public void CanFetchProductReviews()
         {
             var response = apiworker.GetProductReviews("PRODUCT1235");

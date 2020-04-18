@@ -19,5 +19,10 @@ namespace cheapgit.DAL.Models
         public string name { get; set; }
         public string description { get; set; }
         public float price { get; set; }
+        public float retailPrice { get; set; }
+        public int autoExpire { get; set; }
+        public DateTime? autoExpireDate { get; set; }
+        public string featureBullets { get; set; }
+        public int quantity { get; set; }
     }
 }

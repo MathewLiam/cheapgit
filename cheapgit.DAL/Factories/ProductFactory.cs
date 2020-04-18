@@ -25,7 +25,12 @@ namespace cheapgit.DAL.Factories
                 tags = product.tags,
                 name = product.name,
                 manufacturer = product.manufacturer,
-                price = product.price
+                price = product.price,
+                retailPrice = product.retailPrice,
+                autoExpire = product.autoExpire,
+                autoExpireDate = product.autoExpireDate,
+                featureBullets = product.featureBullets,
+                quantity = product.quantity
             };
         }
 

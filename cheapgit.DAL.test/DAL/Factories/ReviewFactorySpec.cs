@@ -20,9 +20,10 @@ namespace cheapgit.test.DAL.Factories
                 id = "REVIEWID",
                 productid = "PRODUCTID",
                 dateAdded =  new System.DateTime(),
-                durability = 4.5F,
-                product_value = 3.6F,
-                overall = 3.9F
+                commentTitle = "NEW COMMENT",
+                commentBody = "I have an opinion",
+                flaggedInappropriate = 0,
+                rating = 5.0f
             };
 
             var productreview = this.reviewfactory.GenerateReview(oraclereview);
@@ -42,18 +43,20 @@ namespace cheapgit.test.DAL.Factories
                     id = "REVIEWID",
                     productid = "PRODUCTID",
                     dateAdded =  new System.DateTime(),
-                    durability = 4.5F,
-                    product_value = 3.6F,
-                    overall = 3.9F
+                    commentTitle = "NEW COMMENT",
+                    commentBody = "I have an opinion",
+                    flaggedInappropriate = 0,
+                    rating = 5.0f
                 },
                 new OracleProductReview
                 {
                     id = "REVIEWID2",
-                    productid = "PRODUCTID2",
+                    productid = "PRODUCTID",
                     dateAdded =  new System.DateTime(),
-                    durability = 5F,
-                    product_value = 3.9F,
-                    overall = 3.3F
+                    commentTitle = "NEW COMMENT",
+                    commentBody = "I have an opinion",
+                    flaggedInappropriate = 0,
+                    rating = 5.0f
                 }
             };
 

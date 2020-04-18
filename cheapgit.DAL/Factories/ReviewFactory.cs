@@ -16,9 +16,10 @@ namespace cheapgit.DAL.Factories
                 id = review.id,
                 productid = review.productid,
                 dateAdded = review.dateAdded,
-                durability = review.durability,
-                product_value = review.product_value,
-                overall = review.overall
+                commentTitle = review.commentTitle,
+                commentBody = review.commentBody,
+                flaggedInappropriate = review.flaggedInappropriate,
+                rating = review.rating
             };
         }
 
@@ -29,9 +30,10 @@ namespace cheapgit.DAL.Factories
                 id = review.id,
                 productid = review.productid,
                 dateAdded = review.dateAdded,
-                durability = review.durability,
-                product_value = review.product_value,
-                overall = review.overall
+                commentTitle = review.commentTitle,
+                commentBody = review.commentBody,
+                flaggedInappropriate = review.flaggedInappropriate,
+                rating = review.rating
             };
         }
 

@@ -49,30 +49,6 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/{product}/comments",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex.oracle.com",
-          "port": 80
-        }
-      ],
-      "UpstreamPathTemplate": "/products/{product}/comments",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
-      "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/{product}/comments/{comment}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "apex.oracle.com",
-          "port": 80
-        }
-      ],
-      "UpstreamPathTemplate": "/products/{product}/comments/{comment}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    {
       "DownstreamPathTemplate": "/pls/apex/cheapgit-dev/products/{product}/reviews",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [

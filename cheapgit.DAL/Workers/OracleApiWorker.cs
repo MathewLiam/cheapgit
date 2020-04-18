@@ -26,7 +26,6 @@ namespace cheapgit.DAL.Workers
         private HttpClient client;
         private ResourceManager resourceManager;
         private IProductFactory productFactory;
-        private ICommentFactory commentFactory;
         private IReviewFactory reviewFactory;
 
         public OracleApiWorker(string baseUri)
@@ -40,7 +39,6 @@ namespace cheapgit.DAL.Workers
                 );
         
             this.productFactory = new ProductFactory();
-            this.commentFactory = new CommentFactory();
             this.reviewFactory = new ReviewFactory();
 
         }
@@ -109,49 +107,6 @@ namespace cheapgit.DAL.Workers
             }
 
             return products.Count > 0 ? products[0] : null ;
-        }
-
-        public async Task<IEnumerable<ProductComment>> GetProductComments(string productid)
-        {
-            List<ProductComment> productComments = new List<ProductComment>();
-
-            HttpResponseMessage response = await this.client.GetAsync(String.Format("{0}/{1}/comments", this.ProductsBaseUri, productid));
-            if(response.IsSuccessStatusCode)
-            {
-                // Build JToken
-                byte[] JSON = await response.Content.ReadAsByteArrayAsync();
-                string s = System.Text.Encoding.UTF8.GetString(JSON, 0, JSON.Length);
-                JToken jsonoracleproductcomments = JObject.Parse(s)["items"];
-
-                IEnumerable<OracleProductComment> oracleProductComments = jsonoracleproductcomments.ToObject<IEnumerable<OracleProductComment>>();
-
-                // Generate product comment from oracle product comment
-                productComments = (List<ProductComment>) this.commentFactory.GenerateComments(oracleProductComments);
-            }
-
-            return productComments;
-        }
-
-        public async Task<ProductComment> GetProductComment(string productid, string commentid)
-        {
-            List<ProductComment> comments = new List<ProductComment>();
-
-            HttpResponseMessage response = await this.client.GetAsync(String.Format("{0}/{1}/comments/{2}", this.ProductsBaseUri, productid, commentid));
-            if (response.IsSuccessStatusCode)
-            {
-                // Build JToken
-                byte[] JSON = await response.Content.ReadAsByteArrayAsync();
-                string s = System.Text.Encoding.UTF8.GetString(JSON, 0, JSON.Length);
-                JToken jsonoracleProductComment = JObject.Parse(s)["items"];
-
-                // Convert from JToken to OracleProduct 
-                IEnumerable<OracleProductComment> oracleProductComment = jsonoracleProductComment.ToObject<IEnumerable<OracleProductComment>>();
-
-                // Generate product from oracleProduct
-                comments = (List<ProductComment>)this.commentFactory.GenerateComments(oracleProductComment);
-            }
-
-            return comments.Count > 0 ? comments[0] : null;
         }
 
         public async Task<IEnumerable<ProductReview>> GetProductReviews(string productid)
