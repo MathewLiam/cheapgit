@@ -71,6 +71,26 @@
     border-bottom: solid 0.6rem lightgreen;
 }
 
+/* PROGRESS BAR STYLES */
+.progress {
+    margin: 1rem;
+    border-radius: 0px;
+}
+
+.progress-bar {
+    border-radius: 0px;
+}
+
+/* LABEL STYLES */
+label {
+    font: bold 0.5rem;
+}
+
+/* MEDIA BLOCK STYLES */
+.media {
+    margin-top: 1rem;
+}
+
 
 /* FOOTER */
 footer {

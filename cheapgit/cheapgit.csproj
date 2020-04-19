@@ -438,11 +438,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ProductDetailsController.cs" />
+    <Compile Include="Controllers\ProductReviewController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\blocks\ProductCard.cs" />
-    <Compile Include="ViewModels\pages\ProductDetails.cs" />
-    <Compile Include="ViewModels\pages\ProductList.cs" />
+    <Compile Include="ViewModels\blocks\ProductCardViewModel.cs" />
+    <Compile Include="ViewModels\blocks\ProductRatingCardViewModel.cs" />
+    <Compile Include="ViewModels\pages\ProductDetailsViewModel.cs" />
+    <Compile Include="ViewModels\pages\ProductListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\imageprocessor\security.config" />
@@ -490,6 +492,7 @@
     <Content Include="Views\Partials\_ProductDetailsTabs.cshtml" />
     <Content Include="scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Partials\_ProductRatingCard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

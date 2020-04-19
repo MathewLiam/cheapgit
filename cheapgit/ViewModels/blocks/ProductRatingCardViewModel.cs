@@ -52,6 +52,13 @@ namespace cheapgit.ViewModels.blocks
             } 
         }
 
+        public int totalReviews {
+            get
+            {
+                return reviews.Count();
+            }
+        }
+
         [Required]
         public IEnumerable<ProductReview> reviews { get; set; }
     }

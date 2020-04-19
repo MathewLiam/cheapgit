@@ -1,9 +1,86 @@
 ﻿@model cheapgit.ViewModels.blocks.ProductRatingCardViewModel
+
+@{
+    var progress5 = ((double)Model.amt5Score / (double)Model.totalReviews) * (double)100;
+    var progress4 = ((double)Model.amt4Score / (double)Model.totalReviews) * (double)100;
+    var progress3 = ((double)Model.amt3Score / (double)Model.totalReviews) * (double)100;
+    var progress2 = ((double)Model.amt2Score / (double)Model.totalReviews) * (double)100;
+    var progress1 = ((double)Model.amt1Score / (double)Model.totalReviews) * (double)100;
+}
+<style>
     
-<h1>@Model.amt1Score</h1>
-<h1>@Model.amt2Score</h1>
-<h1>@Model.amt3Score</h1>
-<h1>@Model.amt4Score</h1>
-<h1>@Model.amt5Score</h1>
-<h1>@Model.averageScore</h1>
+</style>
+
+
+<div class="media border p-3">
+    <div class="media-body" style="text-align: center;">
+        <div class="stars">
+            Average rating: @Model.averageScore<br />
+            @for (var i = 0; i < (int)Model.averageScore; i++)
+            {
+                <i class="fas fa-star"></i>
+            }
+            @if (Model.averageScore % (double)1 != 0)
+            {
+                <i class="fas fa-star-half-alt"></i>
+            }<br />
+             <i class="fas fa-user"></i> @Model.totalReviews reviews
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+                <label><i class="fas fa-star"></i>5</label>
+            </div>
+            <div class="col-sm-11">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@Model.amt5Score" aria-valuemin="0" aria-valuemax="@Model.totalReviews" style="width:@progress5%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+                <label><i class="fas fa-star"></i>4</label>
+            </div>
+            <div class="col-sm-11">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="@Model.amt4Score" aria-valuemin="0" aria-valuemax="@Model.totalReviews" style="width:@progress4%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+                <label><i class="fas fa-star"></i>3</label>
+            </div>
+            <div class="col-sm-11">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="@Model.amt3Score" aria-valuemin="0" aria-valuemax="@Model.totalReviews" style="width:@progress3%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+                <label><i class="fas fa-star"></i>2</label>
+            </div>
+            <div class="col-sm-11">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@Model.amt2Score" aria-valuemin="0" aria-valuemax="@Model.totalReviews" style="width:@progress2%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+                <label><i class="fas fa-star"></i>1</label>
+            </div>
+            <div class="col-sm-11">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@Model.amt1Score" aria-valuemin="0" aria-valuemax="@Model.totalReviews" style="width:@progress1%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
