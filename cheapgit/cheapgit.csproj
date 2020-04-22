@@ -481,14 +481,14 @@
     <Content Include="Views\Partials\_ImageBlock.cshtml" />
     <Content Include="Views\Partials\_ContentBlocks.cshtml" />
     <Content Include="Views\Products.cshtml" />
-    <Content Include="Views\Shared\_ProductCard.cshtml" />
+    <Content Include="Views\Partials\_ProductCard.cshtml" />
     <None Include="Properties\PublishProfiles\CheapGitDev - Web Deploy.pubxml" />
     <Content Include="Views\Partials\_FooterBlock.cshtml" />
     <Content Include="Views\Partials\_HeaderBlock.cshtml" />
     <Content Include="Views\ProductDetails.cshtml" />
     <Content Include="Views\CategoryPage.cshtml" />
     <None Include="Properties\PublishProfiles\cheapgitpreprod - Web Deploy.pubxml" />
-    <Content Include="Views\Shared\_CategoryBlock.cshtml" />
+    <Content Include="Views\Partials\_CategoryBlock.cshtml" />
     <Content Include="Views\Partials\_ProductDetailsTabs.cshtml" />
     <Content Include="scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="scripts\jquery-3.4.1.min.map" />
@@ -512,6 +512,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\MacroPartials\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cheapgit.DAL\cheapgit.DAL.csproj">

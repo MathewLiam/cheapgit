@@ -3,7 +3,7 @@
 @using Umbraco.Web.Models
 @using cheapgit.ViewModels.pages;
 @{
-    Layout = "~/Views/_Master.cshtml";
+    Layout = "_Master.cshtml";
 }
 @if ((bool) Model.Content.GetProperty("headerVisible").GetValue())
 {
@@ -16,7 +16,7 @@
 {
     foreach (var product in Model.products)
     {
-        Html.RenderPartial("~/Views/Shared/_ProductCard.cshtml", new cheapgit.ViewModels.blocks.ProductCardViewModel(Model.Content) { product = product });
+        Html.RenderPartial("~/Views/Partials/_ProductCard.cshtml", new cheapgit.ViewModels.blocks.ProductCardViewModel(Model.Content) { product = product });
     }
 }
  </div>

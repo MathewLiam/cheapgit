@@ -2,12 +2,12 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @using Umbraco.Web.Models
 @{
-    Layout = "~/Views/_Master.cshtml";
+    Layout = "_Master.cshtml";
 }
-@if (Model.Value<bool>("contentAreaHeadingVisible"))
+@if (Model.ContentAreaHeadingVisible)
 {
     <div class="page-heading">
-        <h1 class="header">@Model.Value("contentAreaHeading")</h1>
+        <h1 class="header">@Model.ContentAreaHeading</h1>
     </div>
 }
 

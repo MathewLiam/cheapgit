@@ -1,17 +1,17 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.CategoryPage>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    Layout = "~/Views/_Master.cshtml";
+    Layout = "_Master.cshtml";
 
-    var categories = Model.ChildrenOfType("products");
+    var categories = Model.Children<Products>();
 }
 
-<h1>@Model.Value("categoryTitle")</h1>
+<h1>@Model.Header</h1>
 
-<p>@Model.Value("categoryDescription")</p>
+<p>@Model.PageDescription</p>
 <div class="card-group">
     @foreach (var category in categories)
     {
-        Html.RenderPartial("~/Views/Shared/_CategoryBlock.cshtml", category);
+        Html.RenderPartial("~/Views/Partials/_CategoryBlock.cshtml", category);
     }
 </div>

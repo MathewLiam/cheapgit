@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9677cc67de55810c")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a3e28335adc537fc")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
@@ -336,60 +336,6 @@ namespace Umbraco.Web.PublishedModels
 		public bool SubheadingVisible => this.Value<bool>("subheadingVisible");
 	}
 
-	/// <summary>Product list page</summary>
-	[PublishedModel("products")]
-	public partial class Products : PublishedContentModel
-	{
-		// helpers
-#pragma warning disable 0109 // new is redundant
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "products";
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new static IPublishedContentType GetModelContentType()
-			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Products, TValue>> selector)
-			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-#pragma warning restore 0109
-
-		// ctor
-		public Products(IPublishedContent content)
-			: base(content)
-		{ }
-
-		// properties
-
-		///<summary>
-		/// Categories
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("categories")]
-		public IEnumerable<string> Categories => this.Value<IEnumerable<string>>("categories");
-
-		///<summary>
-		/// Category page display image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("categoryPageDisplayImage")]
-		public IPublishedContent CategoryPageDisplayImage => this.Value<IPublishedContent>("categoryPageDisplayImage");
-
-		///<summary>
-		/// Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("header")]
-		public string Header => this.Value<string>("header");
-
-		///<summary>
-		/// HeaderVisible
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("headerVisible")]
-		public bool HeaderVisible => this.Value<bool>("headerVisible");
-	}
-
 	/// <summary>Jumbotron Block</summary>
 	[PublishedModel("jumbotronBlock")]
 	public partial class JumbotronBlock : PublishedContentModel
@@ -477,9 +423,63 @@ namespace Umbraco.Web.PublishedModels
 		public bool ShowDescription => this.Value<bool>("showDescription");
 	}
 
+	/// <summary>Products</summary>
+	[PublishedModel("products")]
+	public partial class Products : PublishedContentModel, IPageHeader
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new const string ModelTypeAlias = "products";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Products, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Products(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Categories: Enter the categories of product to show in the results
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("categories")]
+		public IEnumerable<string> Categories => this.Value<IEnumerable<string>>("categories");
+
+		///<summary>
+		/// Header: Enter the header text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("header")]
+		public string Header => PageHeader.GetHeader(this);
+
+		///<summary>
+		/// Header visible: Should the header be visible on the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("headerVisible")]
+		public bool HeaderVisible => PageHeader.GetHeaderVisible(this);
+
+		///<summary>
+		/// Page description: Give a brief description of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageDescription")]
+		public string PageDescription => PageHeader.GetPageDescription(this);
+	}
+
 	/// <summary>Category page</summary>
 	[PublishedModel("categoryPage")]
-	public partial class CategoryPage : PublishedContentModel
+	public partial class CategoryPage : PublishedContentModel, IPageHeader
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -503,25 +503,101 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Category description
+		/// Header: Enter the header text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("categoryDescription")]
-		public IHtmlString CategoryDescription => this.Value<IHtmlString>("categoryDescription");
+		[ImplementPropertyType("header")]
+		public string Header => PageHeader.GetHeader(this);
 
 		///<summary>
-		/// Category title
+		/// Header visible: Should the header be visible on the page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("categoryTitle")]
-		public string CategoryTitle => this.Value<string>("categoryTitle");
+		[ImplementPropertyType("headerVisible")]
+		public bool HeaderVisible => PageHeader.GetHeaderVisible(this);
 
 		///<summary>
-		/// Root product details page
+		/// Page description: Give a brief description of the page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("rootProductDetailsPage")]
-		public IPublishedContent RootProductDetailsPage => this.Value<IPublishedContent>("rootProductDetailsPage");
+		[ImplementPropertyType("pageDescription")]
+		public string PageDescription => PageHeader.GetPageDescription(this);
+	}
+
+	// Mixin Content Type with alias "pageHeader"
+	/// <summary>Page header</summary>
+	public partial interface IPageHeader : IPublishedContent
+	{
+		/// <summary>Header</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string Header { get; }
+
+		/// <summary>Header visible</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		bool HeaderVisible { get; }
+
+		/// <summary>Page description</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string PageDescription { get; }
+	}
+
+	/// <summary>Page header</summary>
+	[PublishedModel("pageHeader")]
+	public partial class PageHeader : PublishedContentModel, IPageHeader
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new const string ModelTypeAlias = "pageHeader";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<PageHeader, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public PageHeader(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Header: Enter the header text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("header")]
+		public string Header => GetHeader(this);
+
+		/// <summary>Static getter for Header</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetHeader(IPageHeader that) => that.Value<string>("header");
+
+		///<summary>
+		/// Header visible: Should the header be visible on the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("headerVisible")]
+		public bool HeaderVisible => GetHeaderVisible(this);
+
+		/// <summary>Static getter for Header visible</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static bool GetHeaderVisible(IPageHeader that) => that.Value<bool>("headerVisible");
+
+		///<summary>
+		/// Page description: Give a brief description of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageDescription")]
+		public string PageDescription => GetPageDescription(this);
+
+		/// <summary>Static getter for Page description</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetPageDescription(IPageHeader that) => that.Value<string>("pageDescription");
 	}
 
 	/// <summary>Folder</summary>
