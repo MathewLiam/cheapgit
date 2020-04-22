@@ -150,5 +150,26 @@ namespace cheapgit.DAL.Workers
 
             return productReviews.Count > 0 ? productReviews[0] : null;
         }
+
+        public async Task<IEnumerable<string>> GetProductImages(string productid)
+        {
+            List<string> images = new List<string>();
+
+            HttpResponseMessage response = await this.client.GetAsync(String.Format("{0}/{1}/images", this.ProductsBaseUri, productid));
+            if (response.IsSuccessStatusCode)
+            {
+                // Build JToken
+                byte[] JSON = await response.Content.ReadAsByteArrayAsync();
+                string s = System.Text.Encoding.UTF8.GetString(JSON, 0, JSON.Length);
+                JToken jsonoracleproductimages = JObject.Parse(s)["items"];
+
+                foreach (var image in jsonoracleproductimages)
+                {
+                    images.Add(image["image"].ToString());
+                }
+            }
+
+            return images;
+        }
     }
 }

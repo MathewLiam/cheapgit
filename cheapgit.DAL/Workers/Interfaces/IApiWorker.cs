@@ -13,6 +13,8 @@ namespace cheapgit.DAL.Workers.Interfaces
         Task<Product> GetProductById(string id);
         Task<IEnumerable<ProductReview>> GetProductReviews(string productid);
         Task<ProductReview> GetProductReview(string productid, string reviewid);
+        Task<IEnumerable<string>> GetProductImages(string productid);
+
 
     }
 }

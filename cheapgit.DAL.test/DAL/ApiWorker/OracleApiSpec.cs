@@ -4,6 +4,7 @@ using cheapgit.DAL.Workers;
 using cheapgit.DAL.Workers.Interfaces;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System;
 
 namespace cheapgit.test.DAL.ApiWorker
 {
@@ -15,7 +16,6 @@ namespace cheapgit.test.DAL.ApiWorker
         public void CanFetchListOfProducts()
         {
             var response = apiworker.GetProducts();
-            List<Product> products = (List<Product>) response.Result;
 
             Assert.True(response is Task<IEnumerable<Product>>);
         }
@@ -53,5 +53,12 @@ namespace cheapgit.test.DAL.ApiWorker
             Assert.True(response is Task<ProductReview>);
         }
 
+        [Test]
+        public void CanFetchProductImage()
+        {
+            var response = apiworker.GetProductImages("PRODUCT1237");
+
+            Assert.True(response.Result is IEnumerable<String>);
+        }
     }
 }

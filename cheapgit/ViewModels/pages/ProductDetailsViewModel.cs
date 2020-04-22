@@ -17,5 +17,7 @@ namespace cheapgit.ViewModels.pages
         public ProductDetailsViewModel(IPublishedContent content) : base(content) { }
         public Product product { get; set; }
         public IEnumerable<ProductReview> reviews { get; set; }
+
+        public IEnumerable<string> images { get; set; }
     }
 }
