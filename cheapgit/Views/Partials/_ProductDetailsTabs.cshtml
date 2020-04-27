@@ -26,13 +26,16 @@
 <div class="tab-content">
     <div id="details" class="container tab-pane active">
         <ul>
-        @{ 
-            var points = Model.product.featureBullets.Split('\n');
-            foreach (var point in points)
-            {
-                <li>@point</li>
+            @{
+                if (!String.IsNullOrWhiteSpace(Model.product.featureBullets))
+                {
+                    var points = Model.product.featureBullets.Split('\n');
+                    foreach (var point in points)
+                    {
+                        <li>@point</li>
+                    }
+                }
             }
-        }
         </ul>
     </div>
     <div id="reviews" class="container tab-pane">
