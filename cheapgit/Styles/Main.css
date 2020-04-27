@@ -35,6 +35,9 @@
     margin: 0.7rem;
 }
 
+.row {
+    width:100%;
+}
 
 /*IMAGE BLOCKS*/
 .image-block {

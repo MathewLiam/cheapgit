@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a3e28335adc537fc")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "44d4cb9558c0f913")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -167,7 +167,7 @@ namespace Umbraco.Web.PublishedModels
 		public string FeatureName => this.Value<string>("featureName");
 	}
 
-	/// <summary>Home page</summary>
+	/// <summary>Home Page</summary>
 	[PublishedModel("homePage")]
 	public partial class HomePage : PublishedContentModel
 	{
@@ -235,6 +235,13 @@ namespace Umbraco.Web.PublishedModels
 		public string CustomerSupportNumber => this.Value<string>("customerSupportNumber");
 
 		///<summary>
+		/// News Landing Page Link: Locate the news post link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("newsLandingPageLink")]
+		public IPublishedContent NewsLandingPageLink => this.Value<IPublishedContent>("newsLandingPageLink");
+
+		///<summary>
 		/// Root product details page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -268,13 +275,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("searchVisible")]
 		public bool SearchVisible => this.Value<bool>("searchVisible");
-
-		///<summary>
-		/// Slogan text
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("sloganText")]
-		public string SloganText => this.Value<string>("sloganText");
 
 		///<summary>
 		/// Title image
@@ -406,9 +406,9 @@ namespace Umbraco.Web.PublishedModels
 		public IPublishedContent Image => this.Value<IPublishedContent>("image");
 	}
 
-	/// <summary>Product details</summary>
+	/// <summary>Product Details Page</summary>
 	[PublishedModel("productDetails")]
-	public partial class ProductDetails : PublishedContentModel
+	public partial class ProductDetails : PublishedContentModel, IPageHeader
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -437,9 +437,30 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("showDescription")]
 		public bool ShowDescription => this.Value<bool>("showDescription");
+
+		///<summary>
+		/// Header: Enter the header text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("header")]
+		public string Header => PageHeader.GetHeader(this);
+
+		///<summary>
+		/// Header visible: Should the header be visible on the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("headerVisible")]
+		public bool HeaderVisible => PageHeader.GetHeaderVisible(this);
+
+		///<summary>
+		/// Page description: Give a brief description of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageDescription")]
+		public string PageDescription => PageHeader.GetPageDescription(this);
 	}
 
-	/// <summary>Products</summary>
+	/// <summary>Product Landing Page</summary>
 	[PublishedModel("products")]
 	public partial class Products : PublishedContentModel, IPageHeader
 	{
@@ -493,7 +514,7 @@ namespace Umbraco.Web.PublishedModels
 		public string PageDescription => PageHeader.GetPageDescription(this);
 	}
 
-	/// <summary>Category page</summary>
+	/// <summary>Category Page</summary>
 	[PublishedModel("categoryPage")]
 	public partial class CategoryPage : PublishedContentModel, IPageHeader
 	{
@@ -614,6 +635,114 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Page description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static string GetPageDescription(IPageHeader that) => that.Value<string>("pageDescription");
+	}
+
+	/// <summary>News Article</summary>
+	[PublishedModel("newsArticle")]
+	public partial class NewsArticle : PublishedContentModel, IPageHeader
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new const string ModelTypeAlias = "newsArticle";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NewsArticle, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public NewsArticle(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("image")]
+		public Umbraco.Core.PropertyEditors.ValueConverters.ImageCropperValue Image => this.Value<Umbraco.Core.PropertyEditors.ValueConverters.ImageCropperValue>("image");
+
+		///<summary>
+		/// Post content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("postContent")]
+		public Newtonsoft.Json.Linq.JToken PostContent => this.Value<Newtonsoft.Json.Linq.JToken>("postContent");
+
+		///<summary>
+		/// Header: Enter the header text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("header")]
+		public string Header => PageHeader.GetHeader(this);
+
+		///<summary>
+		/// Header visible: Should the header be visible on the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("headerVisible")]
+		public bool HeaderVisible => PageHeader.GetHeaderVisible(this);
+
+		///<summary>
+		/// Page description: Give a brief description of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageDescription")]
+		public string PageDescription => PageHeader.GetPageDescription(this);
+	}
+
+	/// <summary>News Landing Page</summary>
+	[PublishedModel("newsLandingPage")]
+	public partial class NewsLandingPage : PublishedContentModel, IPageHeader
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new const string ModelTypeAlias = "newsLandingPage";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NewsLandingPage, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public NewsLandingPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Header: Enter the header text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("header")]
+		public string Header => PageHeader.GetHeader(this);
+
+		///<summary>
+		/// Header visible: Should the header be visible on the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("headerVisible")]
+		public bool HeaderVisible => PageHeader.GetHeaderVisible(this);
+
+		///<summary>
+		/// Page description: Give a brief description of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("pageDescription")]
+		public string PageDescription => PageHeader.GetPageDescription(this);
 	}
 
 	/// <summary>Folder</summary>
