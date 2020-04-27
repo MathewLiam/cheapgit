@@ -11,18 +11,39 @@
     {
         productDetailsPage = Model.Content.Value<IPublishedContent>("rootProductDetailsPage");
     }
+    var inStock = (Model.product.quantity > 0);
 }
 
-<div class="card" style="width:20rem">
+<div class="card h-100 product-card">
     <img class="card-img-top" src="~/Media/j4bbqmlo/download.png" alt="Card image">
     <div class="card-body">
+        @if (inStock)
+        {
+            <p><i class="fas fa-check-circle"></i> @Model.product.quantity in stock</p>
+        }
+        else
+        {
+            <p><i class="fas fa-times-circle"></i> Out of stock</p>
+        }
         <h4 class="card-title">
-            <a href="@String.Format("{0}?id={1}", productDetailsPage.Url, Model.product.id)">@Model.product.name</a>
+            @Model.product.name
         </h4>
+
     </div>
     <div class="card-footer">
-        <p>£@Model.product.price</p>
-        <a href="#" class="btn btn-secondary">Add To Wishlist</a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
+        <div class="row">
+            <p class="col-md-5 price">£@Model.product.price</p>
+            <div class="btn-group col-md-7">
+                <a href="@String.Format("{0}?id={1}", productDetailsPage.Url, Model.product.id)" class="btn btn-outline-primary" style="text-align: right;">View</a>
+                @if (inStock)
+                {
+                    <a href="#" class="btn btn-outline-primary">Add To Cart</a>
+                }
+                else
+                {
+                    <a href="#" class="btn btn-outline-primary disabled">Add To Cart</a>
+                }
+            </div>
+        </div>
     </div>
 </div>

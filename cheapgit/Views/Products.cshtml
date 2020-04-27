@@ -11,12 +11,17 @@
 }
 
 <h2>@Model.products.Count() results found</h2>
-<div class="card-group">
-@if (Model.products != null)
-{
-    foreach (var product in Model.products)
+<div class="row">
+    @if (Model.products != null)
     {
-        Html.RenderPartial("~/Views/Partials/_ProductCard.cshtml", new cheapgit.ViewModels.blocks.ProductCardViewModel(Model.Content) { product = product });
+        foreach (var product in Model.products)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3 product-card-area">
+                @{
+                    Html.RenderPartial("~/Views/Partials/_ProductCard.cshtml", new cheapgit.ViewModels.blocks.ProductCardViewModel(Model.Content) { product = product }); }
+            </div>
+
+        }
     }
-}
- </div>
+
+</div>

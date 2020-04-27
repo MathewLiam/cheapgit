@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+	Layout = "_Master.cshtml";
+}
+
+@if((bool) Model.Value("headerVisible")) {
+    <h1>@Model.Value("header")</h1>
+    <p>@Model.Value("pageDescription")</p>
+}
+
+@RenderBody()
