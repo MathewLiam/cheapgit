@@ -533,10 +533,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BasketController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
     <Compile Include="Controllers\ProductReviewController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UmbracoCustomConfig\RegisterCustomRouteComposer.cs" />
     <Compile Include="ViewModels\blocks\ProductCardViewModel.cs" />
     <Compile Include="ViewModels\blocks\ProductRatingCardViewModel.cs" />
     <Compile Include="ViewModels\pages\ProductDetailsViewModel.cs" />
@@ -594,6 +596,7 @@
     <Content Include="scripts\popper.js.map" />
     <Content Include="scripts\popper-utils.min.js.map" />
     <Content Include="scripts\popper-utils.js.map" />
+    <Content Include="Views\Basket\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

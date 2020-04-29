@@ -19,11 +19,19 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
+<<<<<<< Updated upstream
+<<<<<<< HEAD
 <<<<<<< HEAD
 [assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "44d4cb9558c0f913")]
 =======
 [assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "87591c88931a2f7d")]
 >>>>>>> TRY-MM-61 Update the product card to the new design
+=======
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "87591c88931a2f7d")]
+>>>>>>> TRY-MM-61 Update the product card to the new design
+=======
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "44d4cb9558c0f913")]
+>>>>>>> Stashed changes
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedModels

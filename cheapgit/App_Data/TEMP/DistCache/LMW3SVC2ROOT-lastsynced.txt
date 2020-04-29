@@ -1,5 +1,13 @@
+<<<<<<< Updated upstream
+<<<<<<< HEAD
 <<<<<<< HEAD
 3342
 =======
 2322
 >>>>>>> TRY-MM-61 Update the product card to the new design
+=======
+2322
+>>>>>>> TRY-MM-61 Update the product card to the new design
+=======
+4318
+>>>>>>> Stashed changes

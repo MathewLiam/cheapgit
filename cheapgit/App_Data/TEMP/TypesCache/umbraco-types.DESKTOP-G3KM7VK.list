@@ -279,6 +279,7 @@ Umbraco.ModelsBuilder.Validation.MemberTypeModelValidator, Umbraco.ModelsBuilder
 Umbraco.ModelsBuilder.Umbraco.ModelsBuilderComposer, Umbraco.ModelsBuilder, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Umbraco.ModelsBuilderBackOfficeController, Umbraco.ModelsBuilder, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Our.Umbraco.FileSystemProviders.Azure.AzureMediaFileSystemComposer, Our.Umbraco.FileSystemProviders.Azure.Media, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+cheapgit.UmbracoCustomConfig.RegisterCustomRouteComposer, cheapgit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 cheapgit.Controllers.ProductDetailsController, cheapgit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 cheapgit.Controllers.ProductReviewController, cheapgit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 cheapgit.Controllers.ProductsController, cheapgit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -309,6 +310,7 @@ Umbraco.Web.Compose.DatabaseServerRegistrarAndMessengerComposer, Umbraco.Web, Ve
 Umbraco.Web.Cache.DistributedCacheBinderComposer, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Umbraco.ModelsBuilderComposer, Umbraco.ModelsBuilder, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Our.Umbraco.FileSystemProviders.Azure.AzureMediaFileSystemComposer, Our.Umbraco.FileSystemProviders.Azure.Media, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+cheapgit.UmbracoCustomConfig.RegisterCustomRouteComposer, cheapgit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
 Umbraco.Core.PropertyEditors.IPropertyValueConverter
 
