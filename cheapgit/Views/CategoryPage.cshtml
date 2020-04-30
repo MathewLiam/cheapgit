@@ -9,7 +9,7 @@
 <h1>@Model.Header</h1>
 
 <p>@Model.PageDescription</p>
-<div class="card-group">
+<div class="card-columns">
     @foreach (var category in categories)
     {
         Html.RenderPartial("~/Views/Partials/_CategoryBlock.cshtml", category);
