@@ -12,10 +12,28 @@
 
         @foreach (var item in navlinks)
         {
-            <li class="nav-item">
-                <a href="@item.Url" class="nav-link">@item.Name</a>
-            </li>
+            var productPages = item.ChildrenOfType("products");
+            if (productPages != null)
+            {
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="@item.Url" id="navbardrop" data-toggle="dropdown">
+                        @item.Name
+                    </a>
+                    <div class="dropdown-menu">
+                        @foreach (var productPage in productPages)
+                        {
+                            <a class="dropdown-item" href="@productPage.Url">@productPage.Name</a>
+                        }
+                    </div>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a href="@item.Url" class="nav-link">@item.Name</a>
+                </li>
+            }
+
         }
     </ul>
 </nav>
-
