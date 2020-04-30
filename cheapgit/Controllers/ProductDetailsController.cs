@@ -21,9 +21,7 @@ namespace cheapgit.Controllers
         {
             var model = new ProductDetailsViewModel(content.Content)
             {
-                product = await _oracleApiWorker.GetProductById(id),
-                reviews = await _oracleApiWorker.GetProductReviews(id),
-                images = await _oracleApiWorker.GetProductImages(id)
+                product = await _oracleApiWorker.GetProductById(id)
             };
 
             return CurrentTemplate(model);

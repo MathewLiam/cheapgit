@@ -38,7 +38,7 @@ namespace cheapgit.DAL.Workers
                     new MediaTypeWithQualityHeaderValue("Application/json")
                 );
         
-            this.productFactory = new ProductFactory();
+            this.productFactory = new ProductFactory(this);
             this.reviewFactory = new ReviewFactory();
 
         }
@@ -59,7 +59,7 @@ namespace cheapgit.DAL.Workers
                 IEnumerable<OracleProduct> oracleProducts = jsonoracleProducts.ToObject<IEnumerable<OracleProduct>>();
 
                 // Generate products from oracleProducts
-                products = this.productFactory.GerenateProducts(oracleProducts);
+                products = await this.productFactory.GerenateProducts(oracleProducts);
             }
 
             return products;
@@ -81,7 +81,7 @@ namespace cheapgit.DAL.Workers
                 IEnumerable<OracleProduct> oracleProducts = jsonoracleProducts.ToObject<IEnumerable<OracleProduct>>();
 
                 // Generate products from oracleProducts
-                products = this.productFactory.GerenateProducts(oracleProducts);
+                products = await this.productFactory.GerenateProducts(oracleProducts);
             }
 
             return products;
@@ -103,7 +103,7 @@ namespace cheapgit.DAL.Workers
                 IEnumerable<OracleProduct> oracleProducts = jsonoracleProducts.ToObject<IEnumerable<OracleProduct>>();
 
                 // Generate product from oracleProduct
-                products = (List<Product>) this.productFactory.GerenateProducts(oracleProducts);
+                products = (List<Product>) await this.productFactory.GerenateProducts(oracleProducts);
             }
 
             return products.Count > 0 ? products[0] : null ;

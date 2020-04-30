@@ -15,7 +15,7 @@
 }
 
 <div class="card h-100 product-card">
-    <img class="card-img-top" src="~/Media/j4bbqmlo/download.png" alt="Card image">
+    <img class="card-img-top" src="data:image/jpeg;base64, @Model.product.images.FirstOrDefault()" alt="Card image" style="width:100%;">
     <div class="card-body">
         @if (inStock)
         {

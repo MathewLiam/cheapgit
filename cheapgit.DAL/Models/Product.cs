@@ -24,5 +24,7 @@ namespace cheapgit.DAL.Models
         public DateTime? autoExpireDate { get; set; }
         public string featureBullets { get; set; }
         public int quantity { get; set; }
+        public IEnumerable<string> images { get; set; }
+        public IEnumerable<ProductReview> reviews { get; set; }
     }
 }

@@ -39,13 +39,13 @@
         </ul>
     </div>
     <div id="reviews" class="container tab-pane">
-        @{Html.RenderAction(actionName:"GetProductRating", controllerName:"ProductReview", routeValues:new { content = Model.Content, productReviews = Model.reviews });}
+        @{Html.RenderAction(actionName:"GetProductRating", controllerName:"ProductReview", routeValues:new { content = Model.Content, productReviews = Model.product.reviews });}
 
-        @if (Model.reviews.ToList().Count == 0)
+        @if (Model.product.reviews.ToList().Count == 0)
         {
             <p>Be the first to comment on this item!</p>
         }
-        @foreach (var review in Model.reviews)
+        @foreach (var review in Model.product.reviews)
         {
             if (review.flaggedInappropriate != 1)
             {
