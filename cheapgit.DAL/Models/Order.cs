@@ -1,16 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace cheapgit.DAL.Models
+﻿namespace cheapgit.DAL.Models
 {
-    class Order
+    using System;
+
+    /// <summary>
+    /// Defines the <see cref="Order" />.
+    /// </summary>
+    internal class Order
     {
+        /// <summary>
+        /// Gets or sets the id.
+        /// </summary>
         public string id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the customerid.
+        /// </summary>
         public string customerid { get; set; }
+
+        /// <summary>
+        /// Gets or sets the orderdate.
+        /// </summary>
         public DateTime orderdate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the status.
+        /// </summary>
         public string status { get; set; }
 
+        /// <summary>
+        /// Gets or sets the customer.
+        /// </summary>
         public virtual Customer customer { get; set; }
     }
 }

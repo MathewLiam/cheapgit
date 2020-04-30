@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace cheapgit.DAL.Models.OracleServiceModels
+﻿namespace cheapgit.DAL.Models.OracleServiceModels
 {
-    class OracleCustomer
+    /// <summary>
+    /// Defines the <see cref="OracleCustomer" />.
+    /// </summary>
+    internal class OracleCustomer
     {
     }
 }

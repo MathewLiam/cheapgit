@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace cheapgit.DAL.Models.OracleServiceModels
+﻿namespace cheapgit.DAL.Models.OracleServiceModels
 {
-    class OracleOrderItems
+    /// <summary>
+    /// Defines the <see cref="OracleOrderItems" />.
+    /// </summary>
+    internal class OracleOrderItems
     {
     }
 }

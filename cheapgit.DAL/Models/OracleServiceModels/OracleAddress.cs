@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace cheapgit.DAL.Models.OracleServiceModels
+﻿namespace cheapgit.DAL.Models.OracleServiceModels
 {
-    class OracleAddress
+    /// <summary>
+    /// Defines the <see cref="OracleAddress" />.
+    /// </summary>
+    internal class OracleAddress
     {
     }
 }
