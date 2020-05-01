@@ -3,7 +3,7 @@
     /// <summary>
     /// Defines the <see cref="OrderItem" />.
     /// </summary>
-    internal class OrderItem
+    public class OrderItem
     {
         /// <summary>
         /// Gets or sets the id.
