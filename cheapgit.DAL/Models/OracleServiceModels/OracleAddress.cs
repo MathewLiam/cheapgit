@@ -3,7 +3,7 @@
     /// <summary>
     /// Defines the <see cref="OracleAddress" />.
     /// </summary>
-    internal class OracleAddress
+    public class OracleAddress
     {
     }
 }

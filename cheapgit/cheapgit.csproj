@@ -541,6 +541,7 @@
     <Compile Include="UmbracoCustomConfig\RegisterCustomRouteComposer.cs" />
     <Compile Include="ViewModels\blocks\ProductCardViewModel.cs" />
     <Compile Include="ViewModels\blocks\ProductRatingCardViewModel.cs" />
+    <Compile Include="ViewModels\pages\CartViewModel.cs" />
     <Compile Include="ViewModels\pages\ProductDetailsViewModel.cs" />
     <Compile Include="ViewModels\pages\ProductListViewModel.cs" />
   </ItemGroup>

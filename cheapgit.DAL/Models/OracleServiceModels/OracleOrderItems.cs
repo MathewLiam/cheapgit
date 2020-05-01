@@ -3,7 +3,7 @@
     /// <summary>
     /// Defines the <see cref="OracleOrderItems" />.
     /// </summary>
-    internal class OracleOrderItems
+    public class OracleOrderItems
     {
     }
 }

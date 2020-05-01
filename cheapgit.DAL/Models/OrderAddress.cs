@@ -3,7 +3,7 @@
     /// <summary>
     /// Defines the <see cref="OrderAddress" />.
     /// </summary>
-    internal class OrderAddress
+    public class OrderAddress
     {
         /// <summary>
         /// Gets or sets the id.

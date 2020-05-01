@@ -3,7 +3,7 @@
     /// <summary>
     /// Defines the <see cref="OracleCustomer" />.
     /// </summary>
-    internal class OracleCustomer
+    public class OracleCustomer
     {
     }
 }

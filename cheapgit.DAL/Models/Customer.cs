@@ -3,7 +3,7 @@
     /// <summary>
     /// Defines the <see cref="Customer" />.
     /// </summary>
-    internal class Customer
+    public class Customer
     {
         /// <summary>
         /// Gets or sets the id.

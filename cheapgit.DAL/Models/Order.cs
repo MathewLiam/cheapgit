@@ -5,7 +5,7 @@
     /// <summary>
     /// Defines the <see cref="Order" />.
     /// </summary>
-    internal class Order
+    public class Order
     {
         /// <summary>
         /// Gets or sets the id.
